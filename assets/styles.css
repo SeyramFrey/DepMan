@@ -487,3 +487,60 @@ html.theme-light .diagram { background: #0f172a; }
 .brand-logo { width: 34px; height: 34px; border-radius: 50%; display: block; box-shadow: 0 2px 10px rgba(0,0,0,0.35); }
 html.theme-light .brand-logo { box-shadow: 0 2px 8px rgba(15,23,42,0.18); }
 .hero-logo { width: 64px; height: 64px; border-radius: 50%; display: block; margin-bottom: 18px; box-shadow: 0 8px 30px rgba(34, 211, 238, 0.25); }
+/* ===========================================================================
+   Screenshots, gallery & lightbox (appended)
+   =========================================================================== */
+.shot-frame {
+  margin: 18px 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.shot-frame img { display: block; width: 100%; height: auto; cursor: zoom-in; }
+
+/* theme-aware light/dark screenshot swap */
+.shot-light { display: none; }
+html.theme-light .shot-dark { display: none; }
+html.theme-light .shot-light { display: block; }
+
+.hero-shot { margin-top: 26px; position: relative; }
+.hero-shot::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: 16px;
+  box-shadow: inset 0 0 0 1px rgba(91, 140, 255, 0.10);
+  pointer-events: none;
+}
+
+.gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 20px 0; }
+.gallery figure { margin: 0; }
+.gallery img {
+  display: block; width: 100%; height: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  cursor: zoom-in;
+  transition: transform 0.18s, border-color 0.18s;
+}
+.gallery img:hover { transform: translateY(-2px); border-color: var(--accent); }
+.gallery figcaption { margin-top: 9px; font-size: 13px; color: var(--muted); }
+@media (max-width: 760px) { .gallery { grid-template-columns: 1fr; } }
+
+.lightbox {
+  position: fixed; inset: 0; z-index: 100;
+  display: none; align-items: center; justify-content: center;
+  padding: 32px;
+  background: rgba(3, 6, 12, 0.86);
+  backdrop-filter: blur(6px);
+  cursor: zoom-out;
+  animation: fade 0.18s ease;
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  max-width: 95vw; max-height: 92vh;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 90px rgba(0, 0, 0, 0.6);
+}

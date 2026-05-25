@@ -222,6 +222,23 @@
     });
   }
 
+  /* ---------- Lightbox (click a screenshot to zoom) ---------- */
+  function wireLightbox() {
+    var box = $('#lightbox');
+    if (!box) return;
+    var img = box.querySelector('img');
+    $all('.shot-frame img, .gallery img').forEach(function (el) {
+      el.addEventListener('click', function () {
+        img.src = el.currentSrc || el.src;
+        box.classList.add('open');
+      });
+    });
+    box.addEventListener('click', function () { box.classList.remove('open'); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') box.classList.remove('open');
+    });
+  }
+
   /* ---------- Init ---------- */
   document.addEventListener('DOMContentLoaded', function () {
     renderCards();
@@ -231,6 +248,7 @@
     wireSearch();
     wireMenu();
     wireTheme();
+    wireLightbox();
     showSection((location.hash || '#home').slice(1));
   });
 })();

@@ -106,6 +106,11 @@
             </div>
           </div>
 
+          <figure class="hero-shot shot-frame">
+            <img class="shot-dark" src="assets/screenshots/dashboard.png" alt="NerveOps dashboard (dark)" />
+            <img class="shot-light" src="assets/screenshots/dashboard-light.png" alt="NerveOps dashboard (light)" />
+          </figure>
+
           <div class="lang en">
             <h2>What can it do?</h2>
             <p>NerveOps is one control panel for the entire life of a web application — from code on your computer to a live HTTPS website, and everything needed to keep it running.</p>
@@ -216,7 +221,10 @@
 
             <h2>First launch</h2>
             <p>You land on the <b>Overview</b> dashboard — mostly empty at first, which is normal. The left <b>sidebar</b> holds every feature; the main area shows the selected screen. Each screen has a <b>Refresh</b> button and a clear empty state telling you what to do next.</p>
-            <div class="shot">Screenshot: the Overview screen on first launch with the sidebar.</div>
+            <figure class="shot-frame">
+              <img class="shot-dark" src="assets/screenshots/dashboard.png" alt="NerveOps Overview dashboard (dark)" />
+              <img class="shot-light" src="assets/screenshots/dashboard-light.png" alt="NerveOps Overview dashboard (light)" />
+            </figure>
 
             <h2>The recommended start-to-finish path</h2>
             <ol class="steps">
@@ -246,7 +254,10 @@
 
             <h2>Premier lancement</h2>
             <p>Vous arrivez sur le tableau de bord <b>Vue d'ensemble</b> — presque vide au début, c'est normal. La <b>barre latérale</b> gauche contient chaque fonctionnalité ; la zone principale montre l'écran choisi. Chaque écran a un bouton <b>Refresh</b> et un état vide clair qui indique quoi faire ensuite.</p>
-            <div class="shot">Capture : l'écran Vue d'ensemble au premier lancement avec la barre latérale.</div>
+            <figure class="shot-frame">
+              <img class="shot-dark" src="assets/screenshots/dashboard.png" alt="Tableau de bord NerveOps (sombre)" />
+              <img class="shot-light" src="assets/screenshots/dashboard-light.png" alt="Tableau de bord NerveOps (clair)" />
+            </figure>
 
             <h2>Le parcours recommandé du début à la fin</h2>
             <ol class="steps">
@@ -284,6 +295,29 @@
 
           <div class="grid cols-3" id="featureCards"></div>
 
+          <div class="gallery">
+            <figure>
+              <img src="assets/screenshots/local-projects.png" alt="Local Projects" />
+              <figcaption class="lang en">Local Projects — scan &amp; link your code</figcaption>
+              <figcaption class="lang fr">Projets locaux — scanner &amp; lier votre code</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/screenshots/vps.png" alt="VPS Servers" />
+              <figcaption class="lang en">VPS Servers — live metrics over SSH</figcaption>
+              <figcaption class="lang fr">Serveurs VPS — métriques en direct via SSH</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/screenshots/monitoring.png" alt="Monitoring" />
+              <figcaption class="lang en">Monitoring — health scores &amp; alerts</figcaption>
+              <figcaption class="lang fr">Surveillance — scores de santé &amp; alertes</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/screenshots/security.png" alt="Security" />
+              <figcaption class="lang en">Security — audit, firewall &amp; hardening</figcaption>
+              <figcaption class="lang fr">Sécurité — audit, pare-feu &amp; durcissement</figcaption>
+            </figure>
+          </div>
+
           <div class="callout info" style="margin-top:24px">
             <span class="lang en">📖 Full step-by-step for every feature (buttons, wizard steps, confirmations): <a href="../FEATURES_GUIDE.md">FEATURES_GUIDE.md</a>.</span>
             <span class="lang fr">📖 Procédure complète pour chaque fonctionnalité (boutons, étapes, confirmations) : <a href="../fr/FEATURES_GUIDE.md">fr/FEATURES_GUIDE.md</a>.</span>
@@ -319,7 +353,9 @@
               <li><strong>Protect</strong> → Backups, Security audit, Monitoring, mark the release <b>stable</b>.</li>
             </ol>
             <div class="callout danger"><b>If a step fails:</b> expand the failed step, use <code>View recent logs</code>, run a diagnostic in the Incident Center, or roll back from Releases to the last stable version.</div>
-            <div class="shot">Screenshot: a deployment detail screen with every step green.</div>
+            <figure class="shot-frame">
+              <img src="assets/screenshots/deployments.png" alt="NerveOps Deployments screen" />
+            </figure>
             <p>Full guide: <a href="../DEPLOYMENT_FLOW_GUIDE.md">DEPLOYMENT_FLOW_GUIDE.md</a>.</p>
           </div>
 
@@ -350,7 +386,9 @@
               <li><strong>Protéger</strong> → Sauvegardes, audit de Sécurité, Surveillance, marquez la version <b>stable</b>.</li>
             </ol>
             <div class="callout danger"><b>Si une étape échoue :</b> dépliez l'étape, utilisez <code>View recent logs</code>, lancez un diagnostic dans le Centre d'incidents, ou revenez en arrière depuis Versions vers la dernière version stable.</div>
-            <div class="shot">Capture : un écran de détail de déploiement avec toutes les étapes en vert.</div>
+            <figure class="shot-frame">
+              <img src="assets/screenshots/deployments.png" alt="Écran Déploiements de NerveOps" />
+            </figure>
             <p>Guide complet : <a href="../fr/DEPLOYMENT_FLOW_GUIDE.md">fr/DEPLOYMENT_FLOW_GUIDE.md</a>.</p>
           </div>
         </section>
@@ -503,6 +541,8 @@
       </div>
     </main>
   </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true"><img alt="Screenshot preview" /></div>
 
   <script src="assets/app.js"></script>
 </body>
