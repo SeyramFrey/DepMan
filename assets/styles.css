@@ -1,4 +1,4 @@
-/* VPS Manager — Documentation Portal
+/* NerveOps — Documentation Portal
    Self-contained dark theme, no external dependencies. */
 
 :root {
@@ -415,3 +415,75 @@ tr:hover td { background: rgba(91, 140, 255, 0.04); }
   .hero h1 { font-size: 26px; }
   .brand .txt { display: none; }
 }
+
+/* ===========================================================================
+   NerveOps brand + light theme (appended)
+   =========================================================================== */
+.brand .logo {
+  background: var(--surface-3);
+  box-shadow: none;
+  border: 1px solid var(--line);
+}
+.brand .logo svg { display: block; }
+
+.hero-tagline {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 14px;
+  background: linear-gradient(90deg, var(--info), var(--accent), #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.theme-btn {
+  display: inline-grid; place-items: center;
+  width: 38px; height: 38px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--text-soft);
+  cursor: pointer;
+  flex: none;
+}
+.theme-btn:hover { border-color: var(--accent); color: var(--text); }
+.theme-btn .theme-ico-light { display: none; }
+html.theme-light .theme-btn .theme-ico-dark { display: none; }
+html.theme-light .theme-btn .theme-ico-light { display: block; }
+
+/* Light theme: override the token variables on <html>. */
+html.theme-light {
+  --bg: #f6f8fc;
+  --bg-grad: radial-gradient(1200px 600px at 80% -10%, rgba(37, 99, 235, 0.08), transparent 60%),
+             radial-gradient(900px 500px at -10% 10%, rgba(8, 145, 178, 0.06), transparent 55%);
+  --surface: #ffffff;
+  --surface-2: #f1f5f9;
+  --surface-3: #e9eef6;
+  --line: #dbe3ee;
+  --line-soft: #e8edf5;
+  --text: #0f172a;
+  --text-soft: #334155;
+  --muted: #5b6b85;
+  --muted-2: #7c8aa3;
+  --accent: #2563eb;
+  --accent-strong: #1d4ed8;
+  --info: #0891b2;
+  --success: #059669;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --shadow: 0 10px 40px rgba(15, 23, 42, 0.10);
+  color-scheme: light;
+}
+html.theme-light .header { background: rgba(248, 250, 252, 0.85); }
+html.theme-light .sidebar { background: rgba(241, 245, 249, 0.7); }
+html.theme-light .nav-link.active { color: #0b1220; }
+html.theme-light .btn.primary { color: #ffffff; }
+html.theme-light a:hover { color: #1d4ed8; }
+/* Keep code/command blocks dark for high contrast on the light page. */
+html.theme-light pre { background: #0f172a; color: #e2e8f0; border-color: #cbd5e1; }
+html.theme-light :not(pre) > code { background: #eef2f8; color: #1e293b; }
+html.theme-light .diagram { background: #0f172a; }
+/* User brand logo in portal header (raster-backed round mark) */
+.brand-logo { width: 34px; height: 34px; border-radius: 50%; display: block; box-shadow: 0 2px 10px rgba(0,0,0,0.35); }
+html.theme-light .brand-logo { box-shadow: 0 2px 8px rgba(15,23,42,0.18); }
+.hero-logo { width: 64px; height: 64px; border-radius: 50%; display: block; margin-bottom: 18px; box-shadow: 0 8px 30px rgba(34, 211, 238, 0.25); }

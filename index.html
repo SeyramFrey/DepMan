@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VPS Manager — Documentation</title>
-  <meta name="description" content="Official documentation portal for VPS Manager, a local-only desktop DevOps control center." />
+  <title>NerveOps — Documentation</title>
+  <meta name="description" content="Official documentation portal for NerveOps — Local DevOps Control Center. Deploy, monitor and secure your apps without the terminal." />
+  <link rel="icon" type="image/svg+xml" href="assets/nerveops-round.svg" />
+  <script>
+    // Apply saved portal theme before paint (avoids a flash).
+    try { if (localStorage.getItem('nerveops-docs-theme') === 'light') document.documentElement.classList.add('theme-light'); } catch (e) {}
+  </script>
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body class="lang-en">
@@ -12,8 +17,8 @@
   <header class="header">
     <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
     <a class="brand" href="#home" data-nav="home">
-      <span class="logo">V</span>
-      <span class="txt">VPS Manager<small class="lang en">Documentation portal</small><small class="lang fr">Portail de documentation</small></span>
+      <img class="brand-logo" src="assets/nerveops-round.svg" alt="NerveOps" width="34" height="34" />
+      <span class="txt">NerveOps<small class="lang en">Documentation portal</small><small class="lang fr">Portail de documentation</small></span>
     </a>
     <div class="header-spacer"></div>
     <div class="search-wrap">
@@ -24,6 +29,10 @@
       <button data-lang="en" class="active">EN</button>
       <button data-lang="fr">FR</button>
     </div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">
+      <svg class="theme-ico-dark" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      <svg class="theme-ico-light" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+    </button>
   </header>
 
   <div class="backdrop" id="backdrop"></div>
@@ -64,8 +73,10 @@
         <!-- ===== HOME ===== -->
         <section class="section" id="home">
           <div class="hero">
+            <img class="hero-logo" src="assets/nerveops-round.svg" alt="NerveOps" width="64" height="64" />
             <div class="lang en">
-              <h1>VPS Manager</h1>
+              <h1>NerveOps — Local DevOps Control Center</h1>
+              <p class="hero-tagline">Deploy, monitor and secure your apps without the terminal.</p>
               <p>A local-only desktop <b>DevOps control center</b>. Manage servers, deployments, Docker, domains, SSL, backups, security, monitoring and more — <b>without ever opening a terminal</b>. Every action is a named, validated, audited command.</p>
               <div class="pills">
                 <span class="pill">Tauri 2</span><span class="pill">Angular 19</span><span class="pill">Rust</span>
@@ -79,7 +90,8 @@
               </div>
             </div>
             <div class="lang fr">
-              <h1>VPS Manager</h1>
+              <h1>NerveOps — Centre de contrôle DevOps local</h1>
+              <p class="hero-tagline">Déployez, surveillez et sécurisez vos applications sans terminal.</p>
               <p>Un <b>centre de contrôle DevOps</b> de bureau, 100 % local. Gérez serveurs, déploiements, Docker, domaines, SSL, sauvegardes, sécurité, surveillance et plus — <b>sans jamais ouvrir de terminal</b>. Chaque action est une commande nommée, validée et tracée.</p>
               <div class="pills">
                 <span class="pill">Tauri 2</span><span class="pill">Angular 19</span><span class="pill">Rust</span>
@@ -96,11 +108,11 @@
 
           <div class="lang en">
             <h2>What can it do?</h2>
-            <p>VPS Manager is one control panel for the entire life of a web application — from code on your computer to a live HTTPS website, and everything needed to keep it running.</p>
+            <p>NerveOps is one control panel for the entire life of a web application — from code on your computer to a live HTTPS website, and everything needed to keep it running.</p>
           </div>
           <div class="lang fr">
             <h2>Que fait-il ?</h2>
-            <p>VPS Manager est un seul tableau de bord pour toute la vie d'une application web — du code sur votre ordinateur à un site HTTPS en ligne, et tout ce qu'il faut pour le maintenir.</p>
+            <p>NerveOps est un seul tableau de bord pour toute la vie d'une application web — du code sur votre ordinateur à un site HTTPS en ligne, et tout ce qu'il faut pour le maintenir.</p>
           </div>
 
           <div class="grid cols-3" id="homeCards"></div>
@@ -115,7 +127,7 @@
         <section class="section" id="install">
           <div class="lang en">
             <h1 class="page-title">Install &amp; Build</h1>
-            <p class="subtitle">Get VPS Manager running, build it, and generate the Windows installer.</p>
+            <p class="subtitle">Get NerveOps running, build it, and generate the Windows installer.</p>
 
             <h2>1. Prerequisites</h2>
             <table>
@@ -156,7 +168,7 @@
 
           <div class="lang fr">
             <h1 class="page-title">Installation &amp; Build</h1>
-            <p class="subtitle">Faire fonctionner VPS Manager, le compiler, et générer l'installeur Windows.</p>
+            <p class="subtitle">Faire fonctionner NerveOps, le compiler, et générer l'installeur Windows.</p>
 
             <h2>1. Prérequis</h2>
             <table>
@@ -263,11 +275,11 @@
         <section class="section" id="features">
           <div class="lang en">
             <h1 class="page-title">Features</h1>
-            <p class="subtitle">Every screen in VPS Manager. Click a card for the route; full step-by-step walkthroughs are in the Features Guide.</p>
+            <p class="subtitle">Every screen in NerveOps. Click a card for the route; full step-by-step walkthroughs are in the Features Guide.</p>
           </div>
           <div class="lang fr">
             <h1 class="page-title">Fonctionnalités</h1>
-            <p class="subtitle">Chaque écran de VPS Manager. Cliquez une carte pour la route ; les procédures complètes sont dans le Guide des fonctionnalités.</p>
+            <p class="subtitle">Chaque écran de NerveOps. Cliquez une carte pour la route ; les procédures complètes sont dans le Guide des fonctionnalités.</p>
           </div>
 
           <div class="grid cols-3" id="featureCards"></div>
@@ -347,7 +359,7 @@
         <section class="section" id="security">
           <div class="lang en">
             <h1 class="page-title">Security &amp; safety</h1>
-            <p class="subtitle">How VPS Manager protects you and your secrets.</p>
+            <p class="subtitle">How NerveOps protects you and your secrets.</p>
 
             <h2>The safety model</h2>
             <div class="grid cols-2">
@@ -378,7 +390,7 @@
 
           <div class="lang fr">
             <h1 class="page-title">Sécurité &amp; sûreté</h1>
-            <p class="subtitle">Comment VPS Manager vous protège, vous et vos secrets.</p>
+            <p class="subtitle">Comment NerveOps vous protège, vous et vos secrets.</p>
 
             <h2>Le modèle de sûreté</h2>
             <div class="grid cols-2">
@@ -484,8 +496,8 @@
         </section>
 
         <footer class="footer">
-          <span class="lang en">VPS Manager v0.1.0 · Documentation portal · Works fully offline · Source Markdown in <code>docs/</code> and <code>docs/fr/</code>.</span>
-          <span class="lang fr">VPS Manager v0.1.0 · Portail de documentation · Fonctionne hors ligne · Source Markdown dans <code>docs/</code> et <code>docs/fr/</code>.</span>
+          <span class="lang en">NerveOps v0.1.0 · Documentation portal · Works fully offline · Source Markdown in <code>docs/</code> and <code>docs/fr/</code>.</span>
+          <span class="lang fr">NerveOps v0.1.0 · Portail de documentation · Fonctionne hors ligne · Source Markdown dans <code>docs/</code> et <code>docs/fr/</code>.</span>
         </footer>
 
       </div>

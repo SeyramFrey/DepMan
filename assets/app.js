@@ -1,4 +1,4 @@
-/* VPS Manager — Documentation Portal
+/* NerveOps — Documentation Portal
    Vanilla JS, no dependencies. Works offline via file://. */
 (function () {
   'use strict';
@@ -41,7 +41,7 @@
   // Glossary terms (searchable). Curated, bilingual.
   var GLOSSARY = [
     { en: ['VPS (Virtual Private Server)', 'A rented Linux computer in a data center that you control remotely.'], fr: ['VPS (serveur privé virtuel)', 'Un ordinateur Linux loué dans un centre de données que vous contrôlez à distance.'] },
-    { en: ['SSH (Secure Shell)', 'The secure way to connect to and run commands on a remote server. VPS Manager uses keys only.'], fr: ['SSH (Secure Shell)', 'La façon sécurisée de se connecter et d\'exécuter des commandes sur un serveur distant. VPS Manager n\'utilise que des clés.'] },
+    { en: ['SSH (Secure Shell)', 'The secure way to connect to and run commands on a remote server. NerveOps uses keys only.'], fr: ['SSH (Secure Shell)', 'La façon sécurisée de se connecter et d\'exécuter des commandes sur un serveur distant. NerveOps n\'utilise que des clés.'] },
     { en: ['SSH key pair', 'Two matching keys: the private one stays on your computer, the public one goes on the server.'], fr: ['Paire de clés SSH', 'Deux clés correspondantes : la privée reste sur votre ordinateur, la publique va sur le serveur.'] },
     { en: ['Docker', 'Technology that packages and runs apps in isolated containers.'], fr: ['Docker', 'Technologie qui empaquette et exécute des apps dans des conteneurs isolés.'] },
     { en: ['Container', 'A lightweight, isolated package that runs your app with everything it needs.'], fr: ['Conteneur', 'Un paquet léger et isolé qui exécute votre app avec tout ce dont elle a besoin.'] },
@@ -66,14 +66,14 @@
     { en: ['Branch', 'A parallel line of development in Git (e.g. main).'], fr: ['Branche', 'Une ligne de développement parallèle dans Git (ex. main).'] },
     { en: ['Commit', 'A saved snapshot of code changes, with a message.'], fr: ['Commit', 'Un instantané enregistré des modifications de code, avec un message.'] },
     { en: ['Push / Pull / Fetch', 'Git actions to upload, download+merge, or download remote changes.'], fr: ['Push / Pull / Fetch', 'Actions Git pour envoyer, télécharger+fusionner, ou télécharger les changements distants.'] },
-    { en: ['PAT (Personal Access Token)', 'An app-specific password for GitHub that you paste into VPS Manager.'], fr: ['PAT (jeton d\'accès personnel)', 'Un mot de passe propre à l\'app pour GitHub, collé dans VPS Manager.'] },
+    { en: ['PAT (Personal Access Token)', 'An app-specific password for GitHub that you paste into NerveOps.'], fr: ['PAT (jeton d\'accès personnel)', 'Un mot de passe propre à l\'app pour GitHub, collé dans NerveOps.'] },
     { en: ['Slug', 'A short, URL-friendly name (lowercase, digits, dashes) identifying a deployment.'], fr: ['Slug', 'Un nom court adapté aux URL (minuscules, chiffres, tirets) identifiant un déploiement.'] },
     { en: ['Deployment', 'Putting your app onto a server so it runs. A target is a saved pipeline; a run is one execution.'], fr: ['Déploiement', 'Mettre votre app sur un serveur. Une cible est un pipeline enregistré ; une exécution en est une.'] },
     { en: ['Rollback', 'Returning your live app to a previous, known-good version.'], fr: ['Retour arrière', 'Ramener votre app live à une version précédente, connue comme bonne.'] },
     { en: ['Release', 'A captured snapshot of a deployed version; mark one stable to roll back to.'], fr: ['Version (release)', 'Un instantané d\'une version déployée ; marquez-en une stable pour y revenir.'] },
     { en: ['Environment variable', 'A KEY=value setting your app reads at runtime. Mark Secret to store in the keyring.'], fr: ['Variable d\'environnement', 'Un réglage KEY=value lu à l\'exécution. Cochez Secret pour le stocker dans le trousseau.'] },
     { en: ['.env file', 'A file of KEY=value settings; may contain secrets, so it is handled carefully.'], fr: ['Fichier .env', 'Un fichier de réglages KEY=value ; peut contenir des secrets, donc traité avec soin.'] },
-    { en: ['Keyring / Credential Manager', 'The OS\'s secure vault for secrets. VPS Manager stores secrets here, never in its database.'], fr: ['Trousseau / Gestionnaire d\'identifiants', 'Le coffre sécurisé du système pour les secrets. VPS Manager y stocke les secrets, jamais dans sa base.'] },
+    { en: ['Keyring / Credential Manager', 'The OS\'s secure vault for secrets. NerveOps stores secrets here, never in its database.'], fr: ['Trousseau / Gestionnaire d\'identifiants', 'Le coffre sécurisé du système pour les secrets. NerveOps y stocke les secrets, jamais dans sa base.'] },
     { en: ['Redaction', 'Automatically hiding secret values in logs, reports and previews.'], fr: ['Occultation', 'Masquer automatiquement les valeurs secrètes dans journaux, rapports et aperçus.'] },
     { en: ['Audit log', 'An append-only list of every important action you take (no secrets).'], fr: ['Journal d\'audit', 'Une liste en ajout seul de chaque action importante (sans secrets).'] },
     { en: ['Health score', 'A 0–100 summary of a server\'s health (Monitoring) or security posture (Security).'], fr: ['Score de santé', 'Un résumé 0–100 de la santé (Surveillance) ou de la posture de sécurité (Sécurité).'] },
@@ -212,6 +212,16 @@
     if (backdrop) backdrop.addEventListener('click', function () { document.body.classList.remove('nav-open'); });
   }
 
+  /* ---------- Theme (light / dark) ---------- */
+  function wireTheme() {
+    var btn = $('#themeBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var light = document.documentElement.classList.toggle('theme-light');
+      try { localStorage.setItem('nerveops-docs-theme', light ? 'light' : 'dark'); } catch (e) {}
+    });
+  }
+
   /* ---------- Init ---------- */
   document.addEventListener('DOMContentLoaded', function () {
     renderCards();
@@ -220,6 +230,7 @@
     wireLang();
     wireSearch();
     wireMenu();
+    wireTheme();
     showSection((location.hash || '#home').slice(1));
   });
 })();
