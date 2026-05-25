@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VPS Manager — Documentation</title>
+  <meta name="description" content="Official documentation portal for VPS Manager, a local-only desktop DevOps control center." />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="lang-en">
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    <a class="brand" href="#home" data-nav="home">
+      <span class="logo">V</span>
+      <span class="txt">VPS Manager<small class="lang en">Documentation portal</small><small class="lang fr">Portail de documentation</small></span>
+    </a>
+    <div class="header-spacer"></div>
+    <div class="search-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="search" type="search" autocomplete="off" placeholder="Search the docs…" />
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button data-lang="en" class="active">EN</button>
+      <button data-lang="fr">FR</button>
+    </div>
+  </header>
+
+  <div class="backdrop" id="backdrop"></div>
+
+  <div class="layout">
+    <!-- ===== Sidebar ===== -->
+    <aside class="sidebar" id="sidebar">
+      <nav>
+        <div class="nav-group">
+          <h4 class="lang en">Getting started</h4><h4 class="lang fr">Démarrer</h4>
+          <a class="nav-link" data-nav="home"><span class="dot"></span><span class="lang en">Home</span><span class="lang fr">Accueil</span></a>
+          <a class="nav-link" data-nav="install"><span class="dot"></span><span class="lang en">Install &amp; Build</span><span class="lang fr">Installation &amp; Build</span></a>
+          <a class="nav-link" data-nav="user-guide"><span class="dot"></span><span class="lang en">User Guide</span><span class="lang fr">Guide utilisateur</span></a>
+        </div>
+        <div class="nav-group">
+          <h4 class="lang en">Using the app</h4><h4 class="lang fr">Utilisation</h4>
+          <a class="nav-link" data-nav="features"><span class="dot"></span><span class="lang en">Features</span><span class="lang fr">Fonctionnalités</span></a>
+          <a class="nav-link" data-nav="deployment"><span class="dot"></span><span class="lang en">Deployment flow</span><span class="lang fr">Flux de déploiement</span></a>
+          <a class="nav-link" data-nav="security"><span class="dot"></span><span class="lang en">Security &amp; safety</span><span class="lang fr">Sécurité &amp; sûreté</span></a>
+        </div>
+        <div class="nav-group">
+          <h4 class="lang en">Help</h4><h4 class="lang fr">Aide</h4>
+          <a class="nav-link" data-nav="troubleshooting"><span class="dot"></span><span class="lang en">Troubleshooting</span><span class="lang fr">Dépannage</span></a>
+          <a class="nav-link" data-nav="glossary"><span class="dot"></span><span class="lang en">Glossary</span><span class="lang fr">Glossaire</span></a>
+        </div>
+        <div class="nav-group">
+          <h4 class="lang en">Markdown source</h4><h4 class="lang fr">Source Markdown</h4>
+          <a class="nav-link" href="../README.md"><span class="dot"></span>README.md</a>
+          <a class="nav-link" href="../INDEX.md"><span class="dot"></span>INDEX.md</a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- ===== Content ===== -->
+    <main class="content">
+      <div class="container">
+
+        <!-- ===== HOME ===== -->
+        <section class="section" id="home">
+          <div class="hero">
+            <div class="lang en">
+              <h1>VPS Manager</h1>
+              <p>A local-only desktop <b>DevOps control center</b>. Manage servers, deployments, Docker, domains, SSL, backups, security, monitoring and more — <b>without ever opening a terminal</b>. Every action is a named, validated, audited command.</p>
+              <div class="pills">
+                <span class="pill">Tauri 2</span><span class="pill">Angular 19</span><span class="pill">Rust</span>
+                <span class="pill">SQLite</span><span class="pill">SSH (keys only)</span><span class="pill">Docker / Compose</span>
+                <span class="pill">GitHub</span><span class="pill">Caddy / HTTPS</span><span class="pill">100% local</span>
+              </div>
+              <div class="cta">
+                <a class="btn primary" data-nav="install">Install &amp; run</a>
+                <a class="btn" data-nav="deployment">Deploy an app</a>
+                <a class="btn" data-nav="glossary">New to DevOps words?</a>
+              </div>
+            </div>
+            <div class="lang fr">
+              <h1>VPS Manager</h1>
+              <p>Un <b>centre de contrôle DevOps</b> de bureau, 100 % local. Gérez serveurs, déploiements, Docker, domaines, SSL, sauvegardes, sécurité, surveillance et plus — <b>sans jamais ouvrir de terminal</b>. Chaque action est une commande nommée, validée et tracée.</p>
+              <div class="pills">
+                <span class="pill">Tauri 2</span><span class="pill">Angular 19</span><span class="pill">Rust</span>
+                <span class="pill">SQLite</span><span class="pill">SSH (clés uniquement)</span><span class="pill">Docker / Compose</span>
+                <span class="pill">GitHub</span><span class="pill">Caddy / HTTPS</span><span class="pill">100 % local</span>
+              </div>
+              <div class="cta">
+                <a class="btn primary" data-nav="install">Installer &amp; lancer</a>
+                <a class="btn" data-nav="deployment">Déployer une app</a>
+                <a class="btn" data-nav="glossary">Nouveau au vocabulaire ?</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="lang en">
+            <h2>What can it do?</h2>
+            <p>VPS Manager is one control panel for the entire life of a web application — from code on your computer to a live HTTPS website, and everything needed to keep it running.</p>
+          </div>
+          <div class="lang fr">
+            <h2>Que fait-il ?</h2>
+            <p>VPS Manager est un seul tableau de bord pour toute la vie d'une application web — du code sur votre ordinateur à un site HTTPS en ligne, et tout ce qu'il faut pour le maintenir.</p>
+          </div>
+
+          <div class="grid cols-3" id="homeCards"></div>
+
+          <div class="callout tip">
+            <span class="lang en"><b>Safe by design.</b> Secrets never touch the database, logs or exports. The interface can never send a raw command to your server. Dangerous actions always ask first.</span>
+            <span class="lang fr"><b>Sûr par conception.</b> Les secrets ne touchent jamais la base, les journaux ou les exports. L'interface ne peut jamais envoyer de commande brute à votre serveur. Les actions dangereuses demandent toujours d'abord.</span>
+          </div>
+        </section>
+
+        <!-- ===== INSTALL ===== -->
+        <section class="section" id="install">
+          <div class="lang en">
+            <h1 class="page-title">Install &amp; Build</h1>
+            <p class="subtitle">Get VPS Manager running, build it, and generate the Windows installer.</p>
+
+            <h2>1. Prerequisites</h2>
+            <table>
+              <tr><th>Tool</th><th>Why</th><th>Check</th></tr>
+              <tr><td>Node.js (LTS 18+)</td><td>Runs the Angular interface &amp; build tools</td><td><code>node --version</code></td></tr>
+              <tr><td>Rust (stable)</td><td>Compiles the Rust backend — install from rustup.rs</td><td><code>cargo --version</code></td></tr>
+              <tr><td><code>ssh</code> client</td><td>The app connects to servers via your OS ssh</td><td><code>ssh -V</code></td></tr>
+              <tr><td>MS C++ Build Tools (Windows)</td><td>Rust needs a C++ compiler to build the desktop app</td><td>—</td></tr>
+              <tr><td>WebView2 Runtime (Windows)</td><td>Renders the UI (preinstalled on Windows 11)</td><td>—</td></tr>
+            </table>
+
+            <h2>2. Install &amp; run in development</h2>
+            <ol class="steps">
+              <li><strong>Install dependencies</strong> — open a terminal in the project folder and run <code>npm install</code>.</li>
+              <li><strong>Launch the app</strong> — run <code>npm run tauri:dev</code>. The desktop window opens automatically; Rust downloads/compiles on first run.</li>
+            </ol>
+            <div class="callout warn"><b>Use the desktop window</b> that <code>tauri:dev</code> opens — not a normal browser at <code>http://127.0.0.1:1420</code>. In a browser, server features are disabled on purpose.</div>
+
+            <h2>3. Build the installer (.exe / .msi)</h2>
+            <ol class="steps">
+              <li><strong>Run</strong> <code>npm run tauri:build</code>. Tauri builds the optimized UI, compiles Rust in release mode, and packages native installers.</li>
+              <li><strong>Find the result</strong> in <code>src-tauri/target/release/bundle/</code>: the <code>.msi</code> is in <code>msi/</code>, the <code>-setup.exe</code> is in <code>nsis/</code>.</li>
+            </ol>
+            <div class="shot">Screenshot: the <code>bundle/nsis/</code> folder with the <code>-setup.exe</code>, and the installer wizard running.</div>
+
+            <h2>4. Tests &amp; command reference</h2>
+            <table>
+              <tr><th>Goal</th><th>Command</th></tr>
+              <tr><td>Install dependencies</td><td><code>npm install</code></td></tr>
+              <tr><td>Run in development</td><td><code>npm run tauri:dev</code></td></tr>
+              <tr><td>Build interface only</td><td><code>npm run build</code></td></tr>
+              <tr><td>Build desktop installer</td><td><code>npm run tauri:build</code></td></tr>
+              <tr><td>Rust tests</td><td><code>cargo test --manifest-path src-tauri/Cargo.toml</code></td></tr>
+              <tr><td>Angular tests</td><td><code>npm test</code></td></tr>
+            </table>
+            <p>Full details: <a href="../INSTALL_BUILD_GUIDE.md">INSTALL_BUILD_GUIDE.md</a>.</p>
+          </div>
+
+          <div class="lang fr">
+            <h1 class="page-title">Installation &amp; Build</h1>
+            <p class="subtitle">Faire fonctionner VPS Manager, le compiler, et générer l'installeur Windows.</p>
+
+            <h2>1. Prérequis</h2>
+            <table>
+              <tr><th>Outil</th><th>Pourquoi</th><th>Vérifier</th></tr>
+              <tr><td>Node.js (LTS 18+)</td><td>Exécute l'interface Angular &amp; les outils de build</td><td><code>node --version</code></td></tr>
+              <tr><td>Rust (stable)</td><td>Compile le backend Rust — installer depuis rustup.rs</td><td><code>cargo --version</code></td></tr>
+              <tr><td>Client <code>ssh</code></td><td>L'app se connecte aux serveurs via le ssh du système</td><td><code>ssh -V</code></td></tr>
+              <tr><td>MS C++ Build Tools (Windows)</td><td>Rust a besoin d'un compilateur C++</td><td>—</td></tr>
+              <tr><td>WebView2 Runtime (Windows)</td><td>Affiche l'interface (préinstallé sous Windows 11)</td><td>—</td></tr>
+            </table>
+
+            <h2>2. Installer &amp; lancer en développement</h2>
+            <ol class="steps">
+              <li><strong>Installer les dépendances</strong> — ouvrez un terminal dans le dossier du projet et lancez <code>npm install</code>.</li>
+              <li><strong>Lancer l'app</strong> — lancez <code>npm run tauri:dev</code>. La fenêtre de bureau s'ouvre ; Rust se télécharge/compile au premier lancement.</li>
+            </ol>
+            <div class="callout warn"><b>Utilisez la fenêtre de bureau</b> ouverte par <code>tauri:dev</code> — pas un navigateur sur <code>http://127.0.0.1:1420</code>. Dans un navigateur, les fonctions serveur sont désactivées volontairement.</div>
+
+            <h2>3. Générer l'installeur (.exe / .msi)</h2>
+            <ol class="steps">
+              <li><strong>Lancez</strong> <code>npm run tauri:build</code>. Tauri compile l'UI optimisée, Rust en mode release, et empaquète les installeurs natifs.</li>
+              <li><strong>Trouvez le résultat</strong> dans <code>src-tauri/target/release/bundle/</code> : le <code>.msi</code> est dans <code>msi/</code>, le <code>-setup.exe</code> dans <code>nsis/</code>.</li>
+            </ol>
+            <div class="shot">Capture : le dossier <code>bundle/nsis/</code> avec le <code>-setup.exe</code>, et l'assistant d'installation.</div>
+
+            <h2>4. Tests &amp; référence des commandes</h2>
+            <table>
+              <tr><th>Objectif</th><th>Commande</th></tr>
+              <tr><td>Installer les dépendances</td><td><code>npm install</code></td></tr>
+              <tr><td>Lancer en développement</td><td><code>npm run tauri:dev</code></td></tr>
+              <tr><td>Compiler l'interface seule</td><td><code>npm run build</code></td></tr>
+              <tr><td>Compiler l'installeur</td><td><code>npm run tauri:build</code></td></tr>
+              <tr><td>Tests Rust</td><td><code>cargo test --manifest-path src-tauri/Cargo.toml</code></td></tr>
+              <tr><td>Tests Angular</td><td><code>npm test</code></td></tr>
+            </table>
+            <p>Détails complets : <a href="../fr/INSTALL_BUILD_GUIDE.md">fr/INSTALL_BUILD_GUIDE.md</a>.</p>
+          </div>
+        </section>
+
+        <!-- ===== USER GUIDE ===== -->
+        <section class="section" id="user-guide">
+          <div class="lang en">
+            <h1 class="page-title">User Guide</h1>
+            <p class="subtitle">First launch, the interface, and the recommended order to do things in.</p>
+
+            <h2>First launch</h2>
+            <p>You land on the <b>Overview</b> dashboard — mostly empty at first, which is normal. The left <b>sidebar</b> holds every feature; the main area shows the selected screen. Each screen has a <b>Refresh</b> button and a clear empty state telling you what to do next.</p>
+            <div class="shot">Screenshot: the Overview screen on first launch with the sidebar.</div>
+
+            <h2>The recommended start-to-finish path</h2>
+            <ol class="steps">
+              <li><strong>Settings</strong> — pick your projects folder (scanned one level deep).</li>
+              <li><strong>Local Projects</strong> — scan the folder; each project shows its stack &amp; Git branch.</li>
+              <li><strong>GitHub</strong> — paste a Personal Access Token, sync repos, and link each project.</li>
+              <li><strong>SSH Keys + VPS Servers</strong> — generate a key, add your server, assign the key, Test SSH.</li>
+              <li><strong>Deployments</strong> — create a target, preview the plan, deploy.</li>
+              <li><strong>Domains</strong> — map a domain, set DNS, apply the Caddy proxy for automatic HTTPS.</li>
+              <li><strong>Protect &amp; watch</strong> — Backups, Security audit, Monitoring, Automation.</li>
+            </ol>
+
+            <h2>Where your data is stored</h2>
+            <table>
+              <tr><th>What</th><th>Where</th></tr>
+              <tr><td>App database</td><td><code>%AppData%\VPSManager\vps-manager.db</code> (SQLite)</td></tr>
+              <tr><td>Media / cover images</td><td><code>%AppData%\VPSManager\media\</code></td></tr>
+              <tr><td>Secrets</td><td>OS keyring (Windows Credential Manager) — never in the database</td></tr>
+            </table>
+            <div class="callout tip"><b>Copying the database does not leak secrets</b> — they live in the OS keyring, not the <code>.db</code> file.</div>
+            <p>Full details: <a href="../USER_GUIDE.md">USER_GUIDE.md</a>.</p>
+          </div>
+
+          <div class="lang fr">
+            <h1 class="page-title">Guide utilisateur</h1>
+            <p class="subtitle">Premier lancement, l'interface, et l'ordre recommandé des opérations.</p>
+
+            <h2>Premier lancement</h2>
+            <p>Vous arrivez sur le tableau de bord <b>Vue d'ensemble</b> — presque vide au début, c'est normal. La <b>barre latérale</b> gauche contient chaque fonctionnalité ; la zone principale montre l'écran choisi. Chaque écran a un bouton <b>Refresh</b> et un état vide clair qui indique quoi faire ensuite.</p>
+            <div class="shot">Capture : l'écran Vue d'ensemble au premier lancement avec la barre latérale.</div>
+
+            <h2>Le parcours recommandé du début à la fin</h2>
+            <ol class="steps">
+              <li><strong>Paramètres</strong> — choisissez votre dossier de projets (scanné sur un niveau).</li>
+              <li><strong>Projets locaux</strong> — scannez le dossier ; chaque projet montre sa stack &amp; sa branche Git.</li>
+              <li><strong>GitHub</strong> — collez un jeton d'accès personnel, synchronisez, et liez chaque projet.</li>
+              <li><strong>Clés SSH + Serveurs VPS</strong> — générez une clé, ajoutez votre serveur, assignez la clé, Test SSH.</li>
+              <li><strong>Déploiements</strong> — créez une cible, prévisualisez le plan, déployez.</li>
+              <li><strong>Domaines</strong> — associez un domaine, configurez le DNS, appliquez le proxy Caddy pour le HTTPS automatique.</li>
+              <li><strong>Protéger &amp; surveiller</strong> — Sauvegardes, audit de Sécurité, Surveillance, Automatisation.</li>
+            </ol>
+
+            <h2>Où sont stockées vos données</h2>
+            <table>
+              <tr><th>Quoi</th><th>Où</th></tr>
+              <tr><td>Base de données</td><td><code>%AppData%\VPSManager\vps-manager.db</code> (SQLite)</td></tr>
+              <tr><td>Médias / couvertures</td><td><code>%AppData%\VPSManager\media\</code></td></tr>
+              <tr><td>Secrets</td><td>Trousseau du système (Gestionnaire d'identifiants) — jamais dans la base</td></tr>
+            </table>
+            <div class="callout tip"><b>Copier la base ne divulgue pas les secrets</b> — ils vivent dans le trousseau du système, pas dans le fichier <code>.db</code>.</div>
+            <p>Détails complets : <a href="../fr/USER_GUIDE.md">fr/USER_GUIDE.md</a>.</p>
+          </div>
+        </section>
+
+        <!-- ===== FEATURES ===== -->
+        <section class="section" id="features">
+          <div class="lang en">
+            <h1 class="page-title">Features</h1>
+            <p class="subtitle">Every screen in VPS Manager. Click a card for the route; full step-by-step walkthroughs are in the Features Guide.</p>
+          </div>
+          <div class="lang fr">
+            <h1 class="page-title">Fonctionnalités</h1>
+            <p class="subtitle">Chaque écran de VPS Manager. Cliquez une carte pour la route ; les procédures complètes sont dans le Guide des fonctionnalités.</p>
+          </div>
+
+          <div class="grid cols-3" id="featureCards"></div>
+
+          <div class="callout info" style="margin-top:24px">
+            <span class="lang en">📖 Full step-by-step for every feature (buttons, wizard steps, confirmations): <a href="../FEATURES_GUIDE.md">FEATURES_GUIDE.md</a>.</span>
+            <span class="lang fr">📖 Procédure complète pour chaque fonctionnalité (boutons, étapes, confirmations) : <a href="../fr/FEATURES_GUIDE.md">fr/FEATURES_GUIDE.md</a>.</span>
+          </div>
+        </section>
+
+        <!-- ===== DEPLOYMENT ===== -->
+        <section class="section" id="deployment">
+          <div class="lang en">
+            <h1 class="page-title">Deployment flow</h1>
+            <p class="subtitle">From a local project to a live HTTPS website — no terminal.</p>
+
+            <h2>The big picture</h2>
+            <div class="flow">
+              <div class="node"><div class="n">1</div><h4>Local project</h4><p>Your code on your computer</p></div>
+              <div class="arrow">→</div>
+              <div class="node"><div class="n">2</div><h4>GitHub</h4><p>Pushed to a repository</p></div>
+              <div class="arrow">→</div>
+              <div class="node"><div class="n">3</div><h4>VPS + Docker</h4><p>Fetched &amp; run with Compose</p></div>
+              <div class="arrow">→</div>
+              <div class="node"><div class="n">4</div><h4>Caddy / HTTPS</h4><p>Served to visitors securely</p></div>
+            </div>
+
+            <h2>Step by step</h2>
+            <ol class="steps">
+              <li><strong>Settings</strong> → choose your projects folder.</li>
+              <li><strong>Local Projects</strong> → scan; <code>Initialize Git</code> if needed; <code>Link</code> to GitHub.</li>
+              <li><strong>GitHub</strong> → connect (Publish workflows), <code>Sync repositories</code>.</li>
+              <li><strong>SSH Keys</strong> → <code>Generate key</code> (private key stays on your disk).</li>
+              <li><strong>VPS Servers</strong> → <code>Add server</code>, assign the key, <code>Test SSH</code>, <code>Install on this server</code>.</li>
+              <li><strong>Deployments</strong> → <code>New deployment</code>, configure (project, server, branch, ports), <code>Preview plan</code>, then <code>Save target &amp; start deployment</code>. ⚠️ Confirm "Start deployment?".</li>
+              <li><strong>Domains</strong> → <code>New route</code>, enter the domain, add the shown DNS <b>A record</b>, <code>Check DNS</code>, then <code>Apply proxy config</code>. HTTPS is automatic.</li>
+              <li><strong>Protect</strong> → Backups, Security audit, Monitoring, mark the release <b>stable</b>.</li>
+            </ol>
+            <div class="callout danger"><b>If a step fails:</b> expand the failed step, use <code>View recent logs</code>, run a diagnostic in the Incident Center, or roll back from Releases to the last stable version.</div>
+            <div class="shot">Screenshot: a deployment detail screen with every step green.</div>
+            <p>Full guide: <a href="../DEPLOYMENT_FLOW_GUIDE.md">DEPLOYMENT_FLOW_GUIDE.md</a>.</p>
+          </div>
+
+          <div class="lang fr">
+            <h1 class="page-title">Flux de déploiement</h1>
+            <p class="subtitle">D'un projet local à un site HTTPS en ligne — sans terminal.</p>
+
+            <h2>La vue d'ensemble</h2>
+            <div class="flow">
+              <div class="node"><div class="n">1</div><h4>Projet local</h4><p>Votre code sur votre ordinateur</p></div>
+              <div class="arrow">→</div>
+              <div class="node"><div class="n">2</div><h4>GitHub</h4><p>Poussé vers un dépôt</p></div>
+              <div class="arrow">→</div>
+              <div class="node"><div class="n">3</div><h4>VPS + Docker</h4><p>Récupéré &amp; exécuté avec Compose</p></div>
+              <div class="arrow">→</div>
+              <div class="node"><div class="n">4</div><h4>Caddy / HTTPS</h4><p>Servi aux visiteurs en sécurité</p></div>
+            </div>
+
+            <h2>Pas à pas</h2>
+            <ol class="steps">
+              <li><strong>Paramètres</strong> → choisissez votre dossier de projets.</li>
+              <li><strong>Projets locaux</strong> → scannez ; <code>Initialize Git</code> si besoin ; <code>Link</code> à GitHub.</li>
+              <li><strong>GitHub</strong> → connectez (Publish workflows), <code>Sync repositories</code>.</li>
+              <li><strong>Clés SSH</strong> → <code>Generate key</code> (la clé privée reste sur votre disque).</li>
+              <li><strong>Serveurs VPS</strong> → <code>Add server</code>, assignez la clé, <code>Test SSH</code>, <code>Install on this server</code>.</li>
+              <li><strong>Déploiements</strong> → <code>New deployment</code>, configurez (projet, serveur, branche, ports), <code>Preview plan</code>, puis <code>Save target &amp; start deployment</code>. ⚠️ Confirmez « Start deployment? ».</li>
+              <li><strong>Domaines</strong> → <code>New route</code>, saisissez le domaine, ajoutez l'<b>enregistrement A</b> DNS affiché, <code>Check DNS</code>, puis <code>Apply proxy config</code>. Le HTTPS est automatique.</li>
+              <li><strong>Protéger</strong> → Sauvegardes, audit de Sécurité, Surveillance, marquez la version <b>stable</b>.</li>
+            </ol>
+            <div class="callout danger"><b>Si une étape échoue :</b> dépliez l'étape, utilisez <code>View recent logs</code>, lancez un diagnostic dans le Centre d'incidents, ou revenez en arrière depuis Versions vers la dernière version stable.</div>
+            <div class="shot">Capture : un écran de détail de déploiement avec toutes les étapes en vert.</div>
+            <p>Guide complet : <a href="../fr/DEPLOYMENT_FLOW_GUIDE.md">fr/DEPLOYMENT_FLOW_GUIDE.md</a>.</p>
+          </div>
+        </section>
+
+        <!-- ===== SECURITY ===== -->
+        <section class="section" id="security">
+          <div class="lang en">
+            <h1 class="page-title">Security &amp; safety</h1>
+            <p class="subtitle">How VPS Manager protects you and your secrets.</p>
+
+            <h2>The safety model</h2>
+            <div class="grid cols-2">
+              <div class="card"><div class="ico">🚫</div><h3>No raw commands</h3><p>The interface can never send an arbitrary shell/SSH/Docker command. No terminal widget exists.</p></div>
+              <div class="card"><div class="ico">👁️</div><h3>Preview, then confirm</h3><p>Firewall, hardening, proxy, backups, restore, templates and rollback all show a plan first, then ask.</p></div>
+              <div class="card"><div class="ico">🔑</div><h3>SSH keys only</h3><p>The app never asks for, displays or stores your server password.</p></div>
+              <div class="card"><div class="ico">🏠</div><h3>Local only</h3><p>No cloud, no paid service, no background server. Automation runs only while the app is open.</p></div>
+            </div>
+
+            <h2>How secrets are protected</h2>
+            <ul>
+              <li>Secrets live in the <b>OS keyring</b> (Windows Credential Manager), never in the database, logs, reports or exports.</li>
+              <li>SSH <b>private keys</b> stay on disk and are never shown or exported — only the public key is.</li>
+              <li>Secret values are <b>masked</b> (<code>••••••••</code>); revealing one is an audited, confirmed action.</li>
+              <li>Logs are <b>redacted</b> on fetch; deployment previews redact env values; the support bundle is sanitized.</li>
+            </ul>
+
+            <h2>Hardening a server</h2>
+            <ol class="steps">
+              <li><strong>Run audit</strong> on the Security screen to get a score / 100 and top recommendations.</li>
+              <li><strong>Firewall</strong> → add an ALLOW rule for SSH, then <code>Enable firewall</code>.</li>
+              <li><strong>SSH</strong> → confirm key login works, then <code>Disable password authentication</code> (auto-rolls-back if it fails).</li>
+              <li><strong>Review</strong> exposed services &amp; fail2ban; re-run the audit.</li>
+            </ol>
+            <div class="callout warn"><b>Anti-lockout guard:</b> the app refuses to enable the firewall unless an ALLOW rule for the SSH port already exists.</div>
+            <p>Full guide: <a href="../SECURITY_AND_SAFETY_GUIDE.md">SECURITY_AND_SAFETY_GUIDE.md</a>.</p>
+          </div>
+
+          <div class="lang fr">
+            <h1 class="page-title">Sécurité &amp; sûreté</h1>
+            <p class="subtitle">Comment VPS Manager vous protège, vous et vos secrets.</p>
+
+            <h2>Le modèle de sûreté</h2>
+            <div class="grid cols-2">
+              <div class="card"><div class="ico">🚫</div><h3>Aucune commande brute</h3><p>L'interface ne peut jamais envoyer de commande shell/SSH/Docker arbitraire. Aucun terminal n'existe.</p></div>
+              <div class="card"><div class="ico">👁️</div><h3>Aperçu, puis confirmation</h3><p>Pare-feu, durcissement, proxy, sauvegardes, restauration, modèles et retour arrière montrent un plan d'abord.</p></div>
+              <div class="card"><div class="ico">🔑</div><h3>Clés SSH uniquement</h3><p>L'app ne demande, n'affiche ni ne stocke jamais votre mot de passe serveur.</p></div>
+              <div class="card"><div class="ico">🏠</div><h3>100 % local</h3><p>Aucun cloud, aucun service payant, aucun serveur en arrière-plan. L'automatisation ne tourne que si l'app est ouverte.</p></div>
+            </div>
+
+            <h2>Comment les secrets sont protégés</h2>
+            <ul>
+              <li>Les secrets vivent dans le <b>trousseau du système</b> (Gestionnaire d'identifiants), jamais dans la base, journaux, rapports ou exports.</li>
+              <li>Les <b>clés privées</b> SSH restent sur le disque et ne sont jamais affichées ni exportées — seule la clé publique l'est.</li>
+              <li>Les valeurs secrètes sont <b>masquées</b> (<code>••••••••</code>) ; révéler est une action tracée et confirmée.</li>
+              <li>Les journaux sont <b>occultés</b> à la récupération ; les aperçus de déploiement occultent les valeurs d'env ; le bundle de support est assaini.</li>
+            </ul>
+
+            <h2>Durcir un serveur</h2>
+            <ol class="steps">
+              <li><strong>Run audit</strong> sur l'écran Sécurité pour un score / 100 et des recommandations.</li>
+              <li><strong>Pare-feu</strong> → ajoutez une règle ALLOW pour SSH, puis <code>Enable firewall</code>.</li>
+              <li><strong>SSH</strong> → confirmez que la connexion par clé marche, puis <code>Disable password authentication</code> (auto-retour-arrière en cas d'échec).</li>
+              <li><strong>Examinez</strong> les services exposés &amp; fail2ban ; relancez l'audit.</li>
+            </ol>
+            <div class="callout warn"><b>Garde-fou anti-verrouillage :</b> l'app refuse d'activer le pare-feu tant qu'une règle ALLOW pour le port SSH n'existe pas.</div>
+            <p>Guide complet : <a href="../fr/SECURITY_AND_SAFETY_GUIDE.md">fr/SECURITY_AND_SAFETY_GUIDE.md</a>.</p>
+          </div>
+        </section>
+
+        <!-- ===== TROUBLESHOOTING ===== -->
+        <section class="section" id="troubleshooting">
+          <div class="lang en">
+            <h1 class="page-title">Troubleshooting</h1>
+            <p class="subtitle">Fixes for the most common problems.</p>
+
+            <h3>Buttons are greyed out / features disabled</h3>
+            <p>You're in browser mode. Use the <b>desktop window</b> from <code>npm run tauri:dev</code> (or the installed app), not a browser at <code>127.0.0.1:1420</code>.</p>
+
+            <h3>tauri:build fails to compile Rust</h3>
+            <p>Install <b>Rust</b> (<code>cargo --version</code>) and, on Windows, the <b>MS C++ Build Tools</b> and <b>WebView2</b>. The first build is slow — let it finish.</p>
+
+            <h3>"Read-only mode — push disabled" (GitHub)</h3>
+            <p>Reconnect on the GitHub screen choosing <b>Publish workflows</b> with a token that has <b>Contents: Read and write</b>.</p>
+
+            <h3>Test SSH fails</h3>
+            <p>Check host/port/username, confirm the <b>public key is installed</b> on the server (<code>Install on this server</code>), and that <code>ssh -V</code> works.</p>
+
+            <h3>"Check DNS" doesn't confirm / site has no HTTPS</h3>
+            <p>Add the exact <b>A record</b> shown; DNS can take time to propagate. DNS must point to the server <b>before</b> the certificate is issued; then <code>Apply proxy config</code> and <code>Reload Caddy</code>.</p>
+
+            <h3>A deployment step failed</h3>
+            <p>Expand the failed step, use <code>View recent logs</code>, run a diagnostic in the Incident Center, and if needed roll back from Releases.</p>
+
+            <h3>A restore overwrote the wrong thing</h3>
+            <p>Prefer <b>Restore to new dir</b> (safe). <b>Restore to original</b> overwrites live files and cannot be undone.</p>
+
+            <div class="callout info">Still stuck? Open <b>Diagnostics</b>, <code>Generate</code> a sanitized support bundle, and <code>Copy</code> it to share. Full list: <a href="../TROUBLESHOOTING.md">TROUBLESHOOTING.md</a>.</div>
+          </div>
+
+          <div class="lang fr">
+            <h1 class="page-title">Dépannage</h1>
+            <p class="subtitle">Solutions aux problèmes les plus courants.</p>
+
+            <h3>Les boutons sont grisés / fonctions désactivées</h3>
+            <p>Vous êtes en mode navigateur. Utilisez la <b>fenêtre de bureau</b> de <code>npm run tauri:dev</code> (ou l'app installée), pas un navigateur sur <code>127.0.0.1:1420</code>.</p>
+
+            <h3>tauri:build échoue à compiler Rust</h3>
+            <p>Installez <b>Rust</b> (<code>cargo --version</code>) et, sous Windows, les <b>MS C++ Build Tools</b> et <b>WebView2</b>. Le premier build est lent — laissez-le finir.</p>
+
+            <h3>« Read-only mode — push disabled » (GitHub)</h3>
+            <p>Reconnectez-vous sur l'écran GitHub en choisissant <b>Publish workflows</b> avec un jeton ayant <b>Contents: Read and write</b>.</p>
+
+            <h3>Test SSH échoue</h3>
+            <p>Vérifiez hôte/port/utilisateur, confirmez que la <b>clé publique est installée</b> sur le serveur (<code>Install on this server</code>), et que <code>ssh -V</code> fonctionne.</p>
+
+            <h3>« Check DNS » ne confirme pas / pas de HTTPS</h3>
+            <p>Ajoutez l'<b>enregistrement A</b> exact affiché ; le DNS peut mettre du temps à se propager. Le DNS doit pointer vers le serveur <b>avant</b> l'émission du certificat ; puis <code>Apply proxy config</code> et <code>Reload Caddy</code>.</p>
+
+            <h3>Une étape de déploiement a échoué</h3>
+            <p>Dépliez l'étape, utilisez <code>View recent logs</code>, lancez un diagnostic dans le Centre d'incidents, et si besoin revenez en arrière depuis Versions.</p>
+
+            <h3>Une restauration a écrasé la mauvaise chose</h3>
+            <p>Préférez <b>Restore to new dir</b> (sûr). <b>Restore to original</b> écrase les fichiers live et ne peut être annulé.</p>
+
+            <div class="callout info">Toujours bloqué ? Ouvrez <b>Diagnostics</b>, <code>Generate</code> un bundle de support assaini, et <code>Copy</code>-le à partager. Liste complète : <a href="../fr/TROUBLESHOOTING.md">fr/TROUBLESHOOTING.md</a>.</div>
+          </div>
+        </section>
+
+        <!-- ===== GLOSSARY ===== -->
+        <section class="section" id="glossary">
+          <div class="lang en">
+            <h1 class="page-title">Glossary</h1>
+            <p class="subtitle">Every technical term, explained simply. Type in the search box above to filter.</p>
+          </div>
+          <div class="lang fr">
+            <h1 class="page-title">Glossaire</h1>
+            <p class="subtitle">Chaque terme technique, expliqué simplement. Tapez dans la recherche ci-dessus pour filtrer.</p>
+          </div>
+          <dl id="glossaryList"></dl>
+          <p class="no-results" id="glossaryEmpty" style="display:none">
+            <span class="lang en">No matching terms.</span><span class="lang fr">Aucun terme correspondant.</span>
+          </p>
+        </section>
+
+        <footer class="footer">
+          <span class="lang en">VPS Manager v0.1.0 · Documentation portal · Works fully offline · Source Markdown in <code>docs/</code> and <code>docs/fr/</code>.</span>
+          <span class="lang fr">VPS Manager v0.1.0 · Portail de documentation · Fonctionne hors ligne · Source Markdown dans <code>docs/</code> et <code>docs/fr/</code>.</span>
+        </footer>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
